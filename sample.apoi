@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<poi>
+  <args>
+    <arg type="List[String]">xs</arg>
+    <arg type="String">name</arg>
+  </args>
+</poi>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>{{name}}</title>
+  </head>
+  <body>
+    <h1>{{name}}</h1>
+    <ul>
+      <li poi-repeat="x in xs">{{x}}</li>
+    </ul>
+  </body>
+</html>
