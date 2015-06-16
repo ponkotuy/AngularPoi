@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<poi>
-  <args>
-    <arg type="List[String]">xs</arg>
-    <arg type="String">name</arg>
-  </args>
-</poi>
 <html>
   <head>
+    <meta arg="xs" type="List[String]" />
+    <meta arg="name" type="String" />
     <meta charset="UTF-8" />
     <title>{{name}}</title>
   </head>
