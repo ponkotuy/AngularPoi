@@ -1,0 +1,51 @@
+# -*- coding:utf-8 -*-
+
+#+TITLE: AngularPoi
+#+AUTHOR: ポンコツ戦艦山本
+#+EMAIL: web@ponkotuy.com
+#+OPTIONS: toc:nil num:nil author:nil creator:nil
+#+STYLE: <link rel="stylesheet" type="text/css" href="org.css"></link>
+#+LANGUAGE: ja
+
+** Sample
+*** Template
+#+BEGIN_SRC html
+<html>
+  <head>
+    <meta arg="xs" type="List[String]" />
+    <meta arg="name" type="String" />
+    <meta charset="UTF-8" />
+    <title>{{name}}</title>
+  </head>
+  <body>
+    <h1>{{name}}</h1>
+    <ul>
+      <li poi-repeat="x in xs">{{x}}</li>
+    </ul>
+  </body>
+</html>
+#+END_SRC
+
+*** Call
+#+BEGIN_SRC scala
+val reader = Source.fromFile("sample.apoi").bufferedReader()
+val html = APoiParser.load(reader).build(List("a", "b", "c"), "Hello")
+#+END_SRC
+
+*** Result
+#+BEGIN_SRC html
+<html>
+  <head>
+    <meta type="List[String]" arg="xs"/>
+    <meta type="String" arg="name"/>
+    <meta charset="UTF-8"/>
+    <title>Hello</title>
+  </head>
+  <body>
+    <h1>Hello</h1>
+    <ul>
+      <li>a</li><li>b</li><li>c</li>
+    </ul>
+  </body>
+</html>
+#+END_SRC
